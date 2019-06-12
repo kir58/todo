@@ -8,7 +8,6 @@ public/
 
 test/
 
-dist/
 *.temp
 **/.directory
 **/*.log
