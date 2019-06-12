@@ -1,0 +1,17 @@
+.idea/
+.vscode/
+
+node_modules/
+
+!public/img
+public/
+
+test/
+
+dist/
+*.temp
+**/.directory
+**/*.log
+
+.env
+.DS_Store
