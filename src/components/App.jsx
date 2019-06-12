@@ -1,7 +1,6 @@
-/* eslint-disable import/extensions */
 import React from "react";
-import NewTaskForm from "./NewTaskForm.jsx";
-import Tasks from "./Tasks.jsx";
+import NewTaskForm from "./NewTaskForm";
+import Tasks from "./Tasks";
 import styles from "../styles/App.css";
 
 const App = () => (

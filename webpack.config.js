@@ -8,6 +8,9 @@ module.exports = {
     path: path.join(__dirname, "/dist"),
     filename: "index-bundle.js"
   },
+  resolve: {
+    extensions: [".js", ".jsx", "css"]
+  },
   module: {
     rules: [
       {
@@ -31,6 +34,14 @@ module.exports = {
         ])
       }
     ]
+  },
+  devServer: {
+    stats: "errors-only",
+    contentBase: "./dist",
+    historyApiFallback: {
+      disableDotRule: true
+    },
+    port: 3000
   },
   plugins: [
     new HtmlWebpackPlugin({

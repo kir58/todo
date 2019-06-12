@@ -21,10 +21,14 @@ class Tasks extends React.Component {
   handleRemoveTask = id => () => {
     const { removeTask } = this.props;
     removeTask({ id });
+    localStorage.removeItem(id);
   };
 
   handleToggle = id => () => {
-    const { toggle } = this.props;
+    const { toggle, tasks } = this.props;
+    const item = tasks.find(el => el.id === id);
+    const newItem = { ...item, finished: !item.finished };
+    localStorage.setItem(id, JSON.stringify(newItem));
     toggle({ id });
   };
 
@@ -52,6 +56,7 @@ class Tasks extends React.Component {
             <input
               type="checkbox"
               id={t.id}
+              checked={t.finished}
               className={styles.checkbox}
               onChange={this.handleToggle(t.id)}
             />

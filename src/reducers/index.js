@@ -4,22 +4,36 @@ import * as actions from "../actions";
 
 const tasks = handleActions(
   {
+    [actions.getTasks](
+      state,
+      {
+        payload: { tasks }
+      }
+    ) {
+      return tasks;
+    },
     [actions.addTask](
-      state, {
+      state,
+      {
         payload: { task }
-      }) {
+      }
+    ) {
       return [...state, task];
     },
     [actions.removeTask](
-      state, {
+      state,
+      {
         payload: { id }
-      }) {
+      }
+    ) {
       return state.filter(t => t.id !== id);
     },
     [actions.toggle](
-      state, {
+      state,
+      {
         payload: { id }
-      }) {
+      }
+    ) {
       return state.map(t =>
         t.id === id ? { ...t, finished: !t.finished } : t
       );
@@ -27,7 +41,20 @@ const tasks = handleActions(
   },
   []
 );
-
+const currentId = handleActions(
+  {
+    [actions.getTasks](
+      state,
+      {
+        payload: { currentId }
+      }
+    ) {
+      return currentId;
+    }
+  },
+  0
+);
 export default combineReducers({
-  tasks
+  tasks,
+  currentId
 });

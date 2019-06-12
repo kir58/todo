@@ -5,22 +5,39 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 import styles from "../styles/App.css";
 
+
 const actionCreators = {
   addTask: actions.addTask
 };
-
+const mapStateToProps = state => {
+  return { currentId: state.currentId };
+};
 class NewTaskForm extends React.Component {
   constructor(props) {
     super(props);
     this.textInput = React.createRef();
+    this.state = { count: 1 };
   }
+
+  componentDidMount() {
+    const { currentId } = this.props;
+    this.setState({ count: currentId });
+  }
+
+  generateId = () => {
+    const { count } = this.state;
+    const next = count + 1;
+    this.setState({ count: next });
+    return next;
+  };
 
   handleAddTask = e => {
     e.preventDefault();
     const { value } = this.textInput.current;
     const { addTask } = this.props;
-    const task = { text: value, id: _.uniqueId(), finished: false };
+    const task = { text: value, id: this.generateId(), finished: false };
     addTask({ task });
+    localStorage.setItem(task.id, JSON.stringify(task));
     this.textInput.current.value = "";
   };
 
@@ -53,10 +70,11 @@ class NewTaskForm extends React.Component {
 }
 
 NewTaskForm.propTypes = {
-  addTask: PropTypes.func.isRequired
+  addTask: PropTypes.func.isRequired,
+  currentId: PropTypes.number.isRequired
 };
 
 export default connect(
-  null,
+  mapStateToProps,
   actionCreators
 )(NewTaskForm);
