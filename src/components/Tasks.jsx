@@ -51,25 +51,27 @@ class Tasks extends React.Component {
     };
     return (
       <ul className={styles.list}>
-        {tasks.map(t => (
-          <li key={t.id} className={styles.item}>
-            <input
-              type="checkbox"
-              id={t.id}
-              checked={t.finished}
-              className={styles.checkbox}
-              onChange={this.handleToggle(t.id)}
-            />
-            <label htmlFor={t.id} />
-            <span className={getClassText(t.finished)}>{t.text}</span>
-            <button
-              onClick={this.handleRemoveTask(t.id)}
-              className={getClassClose(t.finished)}
-            >
-              X
-            </button>
-          </li>
-        ))}
+        {tasks
+          .sort((a, b) => a.id - b.id)
+          .map(t => (
+            <li key={t.id} className={styles.item}>
+              <input
+                type="checkbox"
+                id={t.id}
+                checked={t.finished}
+                className={styles.checkbox}
+                onChange={this.handleToggle(t.id)}
+              />
+              <label htmlFor={t.id} />
+              <span className={getClassText(t.finished)}>{t.text}</span>
+              <button
+                onClick={this.handleRemoveTask(t.id)}
+                className={getClassClose(t.finished)}
+              >
+                X
+              </button>
+            </li>
+          ))}
       </ul>
     );
   }
