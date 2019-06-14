@@ -1,12 +1,12 @@
 {
-  "homepage": "http://kir58.github.io/todo",
+  "homepage": "http://kir58.github.io/todo/dist",
   "name": "todo_react_redux",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack --mode production",
+    "build": "webpack -p",
     "lint": "eslint index.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
