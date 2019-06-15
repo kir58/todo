@@ -9,7 +9,7 @@ module.exports = {
     filename: "index-bundle.js"
   },
   resolve: {
-    extensions: [".js", ".jsx", "css"]
+    extensions: [".js", ".jsx"]
   },
   module: {
     rules: [

@@ -5,7 +5,6 @@ import { connect } from "react-redux";
 import * as actions from "../actions";
 import styles from "../styles/App.css";
 
-
 const actionCreators = {
   addTask: actions.addTask
 };

@@ -1,6 +1,3 @@
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable no-undef */
-/* eslint-disable react/jsx-filename-extension */
 import React from "react";
 import { render } from "react-dom";
 import { Provider } from "react-redux";
@@ -11,20 +8,14 @@ import reducers from "./reducers";
 import { getInitState } from "./actions";
 
 /* eslint-disable no-underscore-dangle */
-const ext = window.__REDUX_DEVTOOLS_EXTENSION__;
-const devtoolMiddleware = ext && ext();
-/* eslint-enable */
-const store = createStore(
-  reducers,
-  compose(
-    applyMiddleware(thunk),
-    devtoolMiddleware
-  )
-);
+// const ext = window.__REDUX_DEVTOOLS_EXTENSION__;
+// const devtoolMiddleware = ext && ext();
+const store = createStore(reducers, compose(applyMiddleware(thunk)));
 
 store.dispatch(getInitState());
 
 render(
+  // eslint-disable-next-line react/jsx-filename-extension
   <Provider store={store}>
     <App />
   </Provider>,
