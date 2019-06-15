@@ -26,7 +26,7 @@ body {
    text-align: center;
  }
  .form {
-   width: 500px;
+   width: 100%;
    display: flex;
    flex-wrap: wrap;
    align-items: center;
@@ -44,23 +44,30 @@ body {
 }
 
 /* Style the "Add" button */
-  .addBtn {
-    position: relative;
-    left: 34px;
-    border-radius: 50%;
-    font-size: 34px;
-    line-height: 63px;
-    display: inline-block;
-    min-width: 63px;
-    text-align: center;
-    vertical-align: middle;
-    color: #FFFFFF;
-    background-color: #FAA406; 
-    border: none;
+.addBtn {
+   display: none;
 }
 
-.addBtn:hover {
-  background-color: #BBBBBB;
+.addBtn + label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #FFA000;
+}
+
+.addBtn + label::before {
+  display: block;
+  position: absolute;
+  content: "";
+  height: 40%;
+  width: 40%;
+  background-image: url("http://www.clipartbest.com/cliparts/4cb/6qL/4cb6qL4ni.png");
+  background-size: cover;
+ 
 }
 
 .list {
