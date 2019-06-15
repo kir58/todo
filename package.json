@@ -5,13 +5,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
-    "start": "webpack-dev-server",
     "build": "webpack --mode production",
-=======
     "start": "webpack-dev-server --mode development --open --hot",
-    "build": "webpack -p",
->>>>>>> 9cadac261cd044f25f53cc34151420f66773a3ff
     "lint": "eslint index.js",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
