@@ -3,7 +3,7 @@ import { render } from "react-dom";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 import { createStore, applyMiddleware, compose } from "redux";
-import App from "./components/App";
+import App from "./components/App/App";
 import reducers from "./reducers";
 import { getInitState } from "./actions";
 

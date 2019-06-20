@@ -1,9 +1,8 @@
 import React from "react";
-import _ from "lodash";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import * as actions from "../actions";
-import styles from "../styles/App.css";
+import * as actions from "../../actions";
+import styles from "./NewTaskForm.css";
 
 const actionCreators = {
   addTask: actions.addTask
@@ -62,7 +61,6 @@ class NewTaskForm extends React.Component {
             onKeyUp={this.addTaskByEnter}
           />
           <input id="btn" type="submit" className={styles.addBtn} />
-          <label htmlFor="btn"/>
         </form>
       </div>
     );

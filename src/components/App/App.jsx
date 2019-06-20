@@ -1,7 +1,7 @@
 import React from "react";
-import NewTaskForm from "./NewTaskForm";
-import Tasks from "./Tasks";
-import styles from "../styles/App.css";
+import NewTaskForm from "../NewTaskForm/NewTaskForm";
+import Tasks from "../Task/Tasks";
+import styles from "./App.css";
 
 const App = () => (
   <div className={styles.container}>

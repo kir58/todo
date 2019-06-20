@@ -5,8 +5,8 @@ import PropTypes from "prop-types";
 import React from "react";
 import { connect } from "react-redux";
 import cn from "classnames";
-import * as actions from "../actions";
-import styles from "../styles/App.css";
+import * as actions from "../../actions";
+import styles from "./Task.css";
 
 const mapStateToProps = state => {
   return { tasks: state.tasks };
