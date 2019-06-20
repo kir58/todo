@@ -60,7 +60,12 @@ class NewTaskForm extends React.Component {
             ref={this.textInput}
             onKeyUp={this.addTaskByEnter}
           />
-          <input id="btn" type="submit" className={styles.addBtn} />
+          <input
+            id="btn"
+            type="submit"
+            className={styles.addBtn}
+            value="add task"
+          />
         </form>
       </div>
     );
